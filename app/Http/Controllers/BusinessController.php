@@ -10,7 +10,8 @@ class BusinessController extends Controller
 {
     //
     public function index(){
-        $business = Business::all();
+        $business = Business::paginate(2);
+        //  dd($business);
         return view('business',compact('business'));
     }
     public function create(){
